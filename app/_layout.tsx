@@ -1,5 +1,5 @@
 import Routes from '@/routes';
-import FontAwesome from '@expo/vector-icons/FontAwesome';
+import theme from '@/theme/theme';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -8,6 +8,7 @@ import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
+import { ThemeProvider } from 'styled-components';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -18,8 +19,9 @@ export default function RootLayout() {
   const insets = useSafeAreaInsets();
 
   const [loaded, error] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    ...FontAwesome.font,
+    GothamBold: require('../assets/fonts/Gotham-Bold.ttf'),
+    GothamBook: require('../assets/fonts/Gotham-Book.ttf'),
+    GothamBlack: require('../assets/fonts/Gotham-Black.otf'),
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
@@ -43,7 +45,9 @@ export default function RootLayout() {
         paddingTop: insets.top,
       }}
     >
-      <Routes />
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 }

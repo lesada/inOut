@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 function Home() {
   return (
     <View>
-      <Text>Alo</Text>
+      <Text style={{ fontFamily: 'GothamBlack' }}>Home</Text>
     </View>
   );
 }
