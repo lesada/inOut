@@ -1,7 +1,7 @@
 const fonts = {
-  GothamBold: 'GothamBold',
-  GothamBook: 'GothamBook',
-  GothamBlack: 'GothamBlack',
+  regular: 'GothamBook',
+  bold: 'GothamBold',
+  black: 'GothamBlack',
 };
 
 export default fonts;

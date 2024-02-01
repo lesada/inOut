@@ -1,8 +1,8 @@
 import Routes from '@/routes';
-import theme from '@/theme/theme';
+import { darkTheme, lightTheme } from '@/theme/theme';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import {
   SafeAreaProvider,
@@ -16,6 +16,8 @@ export { ErrorBoundary } from 'expo-router';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   const insets = useSafeAreaInsets();
 
   const [loaded, error] = useFonts({
@@ -45,7 +47,7 @@ export default function RootLayout() {
         paddingTop: insets.top,
       }}
     >
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <Routes />
       </ThemeProvider>
     </SafeAreaProvider>

@@ -1,10 +1,19 @@
-import { colors } from './colors';
-import { fonts } from './fonts';
+import colors from './colors';
+import fonts from './fonts';
 
 const theme = {
-  colors,
   fonts,
-  containerPadding: 32,
+  containerPadding: '32px',
 };
 
-export default theme;
+const darkTheme = {
+  ...theme,
+  colors: colors.dark,
+};
+
+const lightTheme = {
+  ...theme,
+  colors: colors.light,
+};
+
+export { darkTheme, lightTheme };
