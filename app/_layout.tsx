@@ -1,3 +1,4 @@
+import Menu from '@/components/Menu';
 import Routes from '@/routes';
 import { darkTheme, lightTheme } from '@/theme/theme';
 import { useFonts } from 'expo-font';
@@ -48,6 +49,7 @@ export default function RootLayout() {
       }}
     >
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <Menu />
         <Routes />
       </ThemeProvider>
     </SafeAreaProvider>
