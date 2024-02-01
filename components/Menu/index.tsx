@@ -1,9 +1,10 @@
 import { Icons } from '@/assets/icons';
+import { Link } from 'expo-router';
 import { useState } from 'react';
 import { Container, Icon, Item, ItemText, Logo, SubMenu } from './styles';
 
 function Menu() {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <Container>
@@ -17,16 +18,26 @@ function Menu() {
       {isOpen && (
         <SubMenu>
           <Item>
-            <ItemText>Início</ItemText>
+            <Link href={'/'} replace onPress={() => setIsOpen(false)}>
+              <ItemText>Início</ItemText>
+            </Link>
           </Item>
           <Item>
-            <ItemText>Jornada de Trabalho</ItemText>
+            <Link
+              href={'/WorkJourney/'}
+              replace
+              onPress={() => setIsOpen(false)}
+            >
+              <ItemText>Jornada de Trabalho</ItemText>
+            </Link>
           </Item>
           <Item>
-            <ItemText>Editar Jornada</ItemText>
+            <ItemText onPress={() => setIsOpen(false)}>Editar Jornada</ItemText>
           </Item>
           <Item>
-            <ItemText>Visualizar Jornada</ItemText>
+            <ItemText onPress={() => setIsOpen(false)}>
+              Visualizar Jornada
+            </ItemText>
             <Icons.Calendar />
           </Item>
           <Item isLast>

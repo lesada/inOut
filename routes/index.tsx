@@ -4,6 +4,7 @@ function Routes() {
   return (
     <Stack>
       <Stack.Screen name="(home)/index" options={{ headerShown: false }} />
+      <Stack.Screen name="WorkJourney/index" options={{ headerShown: false }} />
     </Stack>
   );
 }

@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import { format } from 'date-fns';
+import { Link } from 'expo-router';
 import {
   Block,
   Center,
@@ -21,7 +22,10 @@ function Home() {
           <Day>{format(today, 'dd/MM/yyyy')}</Day>
           <Time>{format(today, 'HH:mm')}</Time>
         </Block>
-        <Button>Iniciar</Button>
+
+        <Button>
+          <Link href={'/WorkJourney/'}>Iniciar </Link>
+        </Button>
       </Center>
     </Container>
   );
