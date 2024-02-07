@@ -8,8 +8,12 @@ import {
   Container,
   Day,
   Icon,
+  Indicator,
   Label,
+  Offset,
+  Progress,
   Title,
+  Wrapper,
 } from './styles';
 
 function WorkJourney() {
@@ -19,7 +23,13 @@ function WorkJourney() {
       <Title>Jornada de Trabalho</Title>
       <Block>
         <Day>{format(today, 'dd/MM/yyyy')}</Day>
-        <Clock></Clock>
+        <Wrapper>
+          <Progress>
+            <Indicator />
+            <Offset />
+          </Progress>
+          <Clock>{format(today, 'HH:mm')}</Clock>
+        </Wrapper>
         <Buttons>
           <Button>
             <Icon>
