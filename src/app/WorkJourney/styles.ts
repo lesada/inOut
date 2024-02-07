@@ -1,4 +1,5 @@
 import { ViewProps } from 'react-native';
+
 import { css } from 'styled-components';
 import styled from 'styled-components/native';
 
@@ -17,95 +18,39 @@ export const Title = styled.Text`
 `;
 
 export const Block = styled.View`
-  padding: 60px;
+  padding: 20px 24px 60px;
   position: relative;
   background-color: ${({ theme }) => theme.colors.neutral[0]};
   border-radius: 32px;
   width: 100%;
-  gap: 60px;
+  align-items: center;
 `;
 
-export const Day = styled.Text`
+export const Row = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+`;
+
+export const Info = styled.Text`
   padding: 5px 8px;
   border-radius: 8px;
   font-size: 12px;
   line-height: 14px;
   background-color: ${({ theme }) => theme.colors.primary[200]};
   color: ${({ theme }) => theme.colors.neutral[900]};
-
-  position: absolute;
-  top: 20px;
-  left: 24px;
-`;
-
-export const Wrapper = styled.View`
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  width: 100%;
-`;
-
-export const Progress = styled.View`
-  width: 220px;
-  height: 220px;
-
-  border-radius: 110px;
-  border-width: 20px;
-  border-color: ${({ theme }) => theme.colors.primary[200]};
-
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-`;
-
-export const Indicator = styled.View.attrs({})`
-  width: 220px;
-  height: 220px;
-
-  border-radius: 110px;
-  border-width: 20px;
-  border-left-color: rgba(0, 0, 0, 0.01);
-  border-bottom-color: rgba(0, 0, 0, 0.01);
-
-  border-right-color: ${({ theme }) => theme.colors.primary[600]};
-  border-top-color: ${({ theme }) => theme.colors.primary[600]};
-
-  transform: rotate(-45deg);
-
-  position: absolute;
-`;
-
-export const Offset = styled.View`
-  width: 220px;
-  height: 220px;
-
-  border-radius: 110px;
-  border-width: 20px;
-
-  border-left-color: rgba(0, 0, 0, 0.01);
-  border-bottom-color: rgba(0, 0, 0, 0.01);
-
-  border-right-color: ${({ theme }) => theme.colors.primary[200]};
-  border-top-color: ${({ theme }) => theme.colors.primary[200]};
-
-  transform: rotate(-135deg);
-
-  position: absolute;
-  z-index: 9;
-`;
-
-export const Clock = styled.Text`
-  font-size: 32px;
-  font-family: ${({ theme }) => theme.fonts.regular};
-  line-height: 40px;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.neutral[900]};
 `;
 
 export const Buttons = styled.View`
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 200px;
+  width: 100%;
+  margin-top: 60px;
 `;
 
 export const Button = styled.View`

@@ -1,19 +1,18 @@
-import { Icons } from '@/assets/icons';
 import { format } from 'date-fns';
+
+import { Icons } from '@/assets/icons';
+import Progress from '@/components/Progress';
+
 import {
   Block,
   Button,
   Buttons,
-  Clock,
   Container,
-  Day,
   Icon,
-  Indicator,
+  Info,
   Label,
-  Offset,
-  Progress,
+  Row,
   Title,
-  Wrapper,
 } from './styles';
 
 function WorkJourney() {
@@ -22,14 +21,11 @@ function WorkJourney() {
     <Container>
       <Title>Jornada de Trabalho</Title>
       <Block>
-        <Day>{format(today, 'dd/MM/yyyy')}</Day>
-        <Wrapper>
-          <Progress>
-            <Indicator />
-            <Offset />
-          </Progress>
-          <Clock>{format(today, 'HH:mm')}</Clock>
-        </Wrapper>
+        <Row>
+          <Info>{format(today, 'dd/MM/yyyy')}</Info>
+          <Info>4h trabalhadas</Info>
+        </Row>
+        <Progress />
         <Buttons>
           <Button>
             <Icon>
