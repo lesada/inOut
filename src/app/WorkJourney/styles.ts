@@ -1,4 +1,4 @@
-import { ViewProps } from 'react-native';
+import { TouchableOpacityProps } from 'react-native';
 
 import { css } from 'styled-components';
 import styled from 'styled-components/native';
@@ -60,9 +60,9 @@ export const Button = styled.View`
 
 type ButtonProps = {
   danger?: boolean;
-} & ViewProps;
+} & TouchableOpacityProps;
 
-export const Icon = styled.View<ButtonProps>`
+export const Icon = styled.TouchableOpacity<ButtonProps>`
   width: 60px;
   height: 60px;
   border-radius: 30px;

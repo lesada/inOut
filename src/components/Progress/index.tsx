@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import { getHours, getMinutes, getSeconds } from 'date-fns';
+import { getSeconds } from 'date-fns';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { useTheme } from 'styled-components';
+
+import { formatHour } from '@/utils/formatHour';
 
 import { Clock } from './styles';
 
@@ -13,26 +15,16 @@ const Progress = () => {
 
   const [seconds, setSeconds] = useState(getSeconds(date));
 
-  const hours = getHours(date);
-  const minutes = getMinutes(date);
-
-  const clock = `${hours}:${minutes}`;
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setSeconds((prev) => prev + 1);
+      setSeconds(getSeconds(new Date()) - 1);
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    if (seconds === 60) {
-      setSeconds(0);
-    }
-  }, [seconds]);
-
   const fill = (seconds / 60) * 100;
+  const clock = formatHour(date);
 
   return (
     <AnimatedCircularProgress
@@ -42,6 +34,7 @@ const Progress = () => {
       tintColor={theme.colors.primary[600]}
       backgroundColor={theme.colors.primary[200]}
       rotation={0}
+      duration={1000}
     >
       {() => <Clock>{clock}</Clock>}
     </AnimatedCircularProgress>
