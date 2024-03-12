@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.TouchableOpacity`
-  background-color: ${({ theme }) => theme.colors.primary[800]};
+  background-color: ${({ theme }) => theme.colors.button.primary.enabled};
   padding: 16px 32px;
   border-radius: 4px;
   align-items: center;
@@ -13,5 +13,5 @@ export const Container = styled.TouchableOpacity`
 export const Content = styled.Text`
   font-family: ${({ theme }) => theme.fonts.bold};
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.neutral[0]};
+  color: ${({ theme }) => theme.colors.text.light};
 `;

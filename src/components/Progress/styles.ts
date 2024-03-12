@@ -5,5 +5,5 @@ export const Clock = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   line-height: 40px;
   text-align: center;
-  color: ${({ theme }) => theme.colors.neutral[900]};
+  color: ${({ theme }) => theme.colors.text.dark};
 `;

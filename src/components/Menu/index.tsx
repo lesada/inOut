@@ -1,10 +1,18 @@
-import { Icons } from '@/assets/icons';
-import { Link } from 'expo-router';
 import { useState } from 'react';
+
+import { Link } from 'expo-router';
+
+import { Icons } from '@/assets/icons';
+
 import { Container, Icon, Item, ItemText, Logo, SubMenu } from './styles';
 
-function Menu() {
+type MenuProps = {
+  setDarkMode: (value: boolean) => void;
+};
+
+function Menu({ setDarkMode }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <Container>

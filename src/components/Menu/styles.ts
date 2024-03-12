@@ -1,4 +1,5 @@
 import { ViewProps } from 'react-native';
+
 import { css } from 'styled-components';
 import styled from 'styled-components/native';
 
@@ -8,9 +9,9 @@ export const Container = styled.View`
   justify-content: center;
   height: 95px;
   padding: ${({ theme }) => theme.containerPadding};
-  border-bottom: 1px solid ${({ theme }) => theme.colors.neutral[700]};
+
   position: relative;
-  background-color: ${({ theme }) => theme.colors.neutral[0]};
+  background-color: ${({ theme }) => theme.colors.background.header};
 `;
 
 export const Icon = styled.TouchableOpacity`
@@ -25,10 +26,11 @@ export const SubMenu = styled.View`
   top: 95px;
   z-index: 9;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.neutral[0]};
+  background-color: ${({ theme }) => theme.colors.background.header};
   z-index: 9;
   padding: 24px ${({ theme }) => theme.containerPadding};
   gap: 24px;
+  color: ${({ theme }) => theme.colors.text.dark};
 `;
 
 type ItemProps = {
@@ -42,7 +44,7 @@ export const Item = styled.View<ItemProps>`
   gap: 8px;
 
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) => theme.colors.primary[600]};
+  border-bottom-color: ${({ theme }) => theme.colors.timer.circle.dark};
   padding-bottom: 8px;
 
   ${({ isLast }) =>
@@ -55,5 +57,5 @@ export const Item = styled.View<ItemProps>`
 export const ItemText = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.neutral[1000]};
+  color: ${({ theme }) => theme.colors.text.dark};
 `;

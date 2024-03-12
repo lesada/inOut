@@ -1,15 +1,16 @@
-import Menu from '@/components/Menu';
-import Routes from '@/routes';
-import { darkTheme, lightTheme } from '@/theme/theme';
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
 } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'styled-components';
+
+import Menu from '@/components/Menu';
+import Routes from '@/routes';
+import { darkTheme, lightTheme } from '@/theme/theme';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -17,7 +18,7 @@ export { ErrorBoundary } from 'expo-router';
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const insets = useSafeAreaInsets();
 
@@ -49,7 +50,7 @@ export default function RootLayout() {
       }}
     >
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-        <Menu />
+        <Menu setDarkMode={setIsDarkMode}/>
         <Routes />
       </ThemeProvider>
     </SafeAreaProvider>

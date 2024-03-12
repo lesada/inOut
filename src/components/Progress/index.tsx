@@ -31,8 +31,8 @@ const Progress = () => {
       size={220}
       width={18}
       fill={fill}
-      tintColor={theme.colors.primary[600]}
-      backgroundColor={theme.colors.primary[200]}
+      tintColor={theme.colors.timer.circle.dark}
+      backgroundColor={theme.colors.timer.circle.light}
       rotation={0}
       duration={1000}
     >
