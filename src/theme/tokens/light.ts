@@ -71,6 +71,12 @@ const light = {
   },
 
   icons: base.primary[800],
+
+  menu: {
+    text: base.neutral[900],
+    button: base.primary[800],
+    line: base.primary[600],
+  },
 };
 
 export default light;

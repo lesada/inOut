@@ -1,17 +1,29 @@
 import { useState } from 'react';
 
 import { Link } from 'expo-router';
+import { useTheme } from 'styled-components/native';
 
 import { Icons } from '@/assets/icons';
 
-import { Container, Icon, Item, ItemText, Logo, SubMenu } from './styles';
+import {
+  Container,
+  Icon,
+  Item,
+  ItemText,
+  Logo,
+  SubMenu,
+  SwitchContainer,
+} from './styles';
 
 type MenuProps = {
+  isDarkMode: boolean;
   setDarkMode: (value: boolean) => void;
 };
 
-function Menu({ setDarkMode }: MenuProps) {
+function Menu({ isDarkMode, setDarkMode }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const { colors } = useTheme();
 
   return (
     <>
@@ -46,12 +58,17 @@ function Menu({ setDarkMode }: MenuProps) {
             <ItemText onPress={() => setIsOpen(false)}>
               Visualizar Jornada
             </ItemText>
-            <Icons.Calendar />
+            <Icons.Calendar fill={colors.menu.text} />
           </Item>
           <Item isLast>
             <ItemText>Sair</ItemText>
             <Icons.Exit />
           </Item>
+          <SwitchContainer
+            onValueChange={() => setDarkMode(!isDarkMode)}
+            value={isDarkMode}
+            style={{ transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }] }}
+          />
         </SubMenu>
       )}
     </>

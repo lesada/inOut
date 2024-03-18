@@ -50,7 +50,7 @@ export default function RootLayout() {
       }}
     >
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-        <Menu setDarkMode={setIsDarkMode}/>
+        <Menu setDarkMode={setIsDarkMode} isDarkMode={isDarkMode} />
         <Routes />
       </ThemeProvider>
     </SafeAreaProvider>

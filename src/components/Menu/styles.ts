@@ -1,4 +1,4 @@
-import { ViewProps } from 'react-native';
+import { Switch, ViewProps } from 'react-native';
 
 import { css } from 'styled-components';
 import styled from 'styled-components/native';
@@ -30,7 +30,7 @@ export const SubMenu = styled.View`
   z-index: 9;
   padding: 24px ${({ theme }) => theme.containerPadding};
   gap: 24px;
-  color: ${({ theme }) => theme.colors.text.dark};
+  color: ${({ theme }) => theme.colors.menu.text};
 `;
 
 type ItemProps = {
@@ -44,7 +44,7 @@ export const Item = styled.View<ItemProps>`
   gap: 8px;
 
   border-bottom-width: 1px;
-  border-bottom-color: ${({ theme }) => theme.colors.timer.circle.dark};
+  border-bottom-color: ${({ theme }) => theme.colors.menu.line};
   padding-bottom: 8px;
 
   ${({ isLast }) =>
@@ -57,5 +57,15 @@ export const Item = styled.View<ItemProps>`
 export const ItemText = styled.Text`
   font-family: ${({ theme }) => theme.fonts.regular};
   font-size: 16px;
-  color: ${({ theme }) => theme.colors.text.dark};
+  color: ${({ theme }) => theme.colors.menu.text};
+`;
+
+export const SwitchContainer = styled(Switch).attrs(({ theme }) => ({
+  trackColor: {
+    false: theme.colors.menu.button,
+    true: theme.colors.menu.button,
+  },
+  thumbColor: theme.colors.text.light,
+}))`
+  margin-right: auto;
 `;

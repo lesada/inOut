@@ -71,6 +71,12 @@ const dark = {
   },
 
   icons: base.neutral[100],
+
+  menu: {
+    text: base.neutral[100],
+    button: base.secondary[600],
+    line: base.neutral[400],
+  },
 };
 
 export default dark;
